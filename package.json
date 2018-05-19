@@ -1,0 +1,27 @@
+{
+  "name": "random-quote-machine",
+  "version": "1.0.0",
+  "description": "This project is the part of Freecoedcamp.com's front end developer certificate.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SACHIN5SOS/Random-quote-machine.git"
+  },
+  "author": "Sachin Bhandari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SACHIN5SOS/Random-quote-machine/issues"
+  },
+  "homepage": "https://github.com/SACHIN5SOS/Random-quote-machine#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.3"
+  },
+  "dependencies": {
+    "webpack-cli": "^2.1.3"
+  }
+}

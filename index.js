@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
   function getQuote()
   {
     //for random color
@@ -12,8 +10,21 @@ $(document).ready(function(){
   var url="https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?"; 
   $.getJSON(url,function(data){
     $("#quote").fadeOut(function(){
+      $.ajax({
+    url: "https://api.unsplash.com/photos/random?client_id=b3e6bd91754c4a908d00b9eef529b613536ac06204e26ca54c802c5d0d9d2e6b",
+      cache: false,
+      success: function(result){
+        randomPhoto = result.urls.regular;
+          photoName = result.user.name;
+  
+     $('body').css('background-image', 'url('+randomPhoto+')');  
+  $('#photographer').html(photoName);
+    
+      }
+  
+                });
       $(this).html('"'+data.quoteText+'"').fadeIn();
-      
+        
       $(this).css("color",color);
     
   });
@@ -23,19 +34,7 @@ $(document).ready(function(){
      });
     });
   
-$.ajax({
-  url: "https://api.unsplash.com/photos/random?client_id=eb7fd1e52a0958796d923eaaf344e1ed326598d361370fa6b2d5d730df21dd12",
-  cache: false,
-  success: function(result){
-    randomPhoto = result.urls.regular;
-    photoName = result.user.name;
-  
-    $('body').css('background-image', 'url('+randomPhoto+')');  
- $('.photographer').html('Random Quotes & Images &copy by Che Mug | Photo by ' + photoName);
-    
-  }
-  
-});
+
   
   };
  
@@ -47,5 +46,4 @@ $("#newquote").on("click",function(){
 $("#tweet").on("click",function(){
   var randomquote=$("#quote").text();
   window.open("https://twitter.com/intent/tweet?text="+randomquote);
-});
 });
